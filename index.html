@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>BiDi Homecare · Chăm sóc người cao tuổi tại nhà, Hà Nội</title>
+    <meta name="description" content="Điều dưỡng, hộ lý, caregiver chăm sóc người cao tuổi và người bệnh sau xuất viện tại nhà ở Hà Nội. Linh hoạt theo giờ, ca, tháng. Tư vấn miễn phí qua Zalo 038 386 4255." />
+    <meta name="theme-color" content="#FBF7F0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BiDi Homecare · Chăm sóc người thân như chính gia đình mình" />
+    <meta property="og:description" content="Điều dưỡng, hộ lý, caregiver chăm sóc tận nhà tại Hà Nội." />
+    <meta property="og:image" content="brand/og.jpg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="brand/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Lora:ital,wght@1,500;1,600&display=swap&subset=vietnamese" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HomeHealthCareService",
+        "name": "BiDi Homecare",
+        "telephone": "+84383864255",
+        "areaServed": "Hà Nội",
+        "priceRange": "150.000đ – 69.000.000đ"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="stage" aria-hidden="true">
+      <canvas id="heart3d"></canvas>
+      <svg class="stage-fallback" viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="fb-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1C3D75" /><stop offset=".5" stop-color="#4A4A62" /><stop offset="1" stop-color="#7A4A30" /></linearGradient>
+          <radialGradient id="fb-heart" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#C27B52" /><stop offset=".55" stop-color="#86401F" /><stop offset="1" stop-color="#5E2A12" /></radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="82" fill="none" stroke="url(#fb-ring)" stroke-width="9" />
+        <path d="M100 150C58 122 46 98 52 78c6-20 32-26 48-6 16-20 42-14 48 6 6 20-6 44-48 72z" fill="url(#fb-heart)" />
+      </svg>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+    <div id="app">
+      <noscript>
+        <div style="padding:40px;font-family:system-ui;max-width:640px;margin:auto">
+          <h1>BiDi Homecare</h1>
+          <p>Chăm sóc người cao tuổi và người bệnh sau xuất viện tại nhà, Hà Nội.</p>
+          <p>Hotline / Zalo: <a href="tel:+84383864255">038 386 4255</a></p>
+        </div>
+      </noscript>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
