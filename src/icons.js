@@ -90,3 +90,82 @@ export function coverArt(kind) {
   <g transform="translate(152 120) scale(4)" fill="none" stroke="${kind === 'walk' ? '#6E5233' : '#0B3F7F'}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".85">${glyph}</g>
 </svg>`;
 }
+
+// ---------- Shop product illustrations (placeholders for real photos) ----------
+const BG = {
+  med: ['#EAF3FC', '#D3E4F5'],
+  hygiene: ['#F4EEF7', '#E4D8EE'],
+  nutrition: ['#FFF4E3', '#F5DFC0'],
+  aids: ['#ECF4EE', '#D3E5D8'],
+  insurance: ['#F7F0E8', '#EBD7C1']
+};
+const L = `stroke="${LINE}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"`;
+const ART = {
+  pillbox: `<rect x="100" y="118" width="200" height="92" rx="18" fill="#fff" ${L}/>
+    ${[0, 1, 2, 3, 4, 5, 6].map((i) => `<rect x="${110 + i * 26.5}" y="128" width="20" height="30" rx="6" fill="${['#F2B6A6', '#F6CF6E', '#9CC6EE', '#B7CF9E'][i % 4]}" stroke="${LINE}" stroke-width="3"/>`).join('')}
+    <path d="M114 178h172" stroke="${LINE}" stroke-width="3" stroke-dasharray="4 8" fill="none"/>
+    <g transform="rotate(-30 300 90)"><rect x="276" y="80" width="48" height="20" rx="10" fill="#fff" ${L}/><path d="M300 80v20" stroke="${LINE}" stroke-width="3"/><rect x="300" y="82" width="22" height="16" rx="8" fill="#E8A68C"/></g>
+    <circle cx="108" cy="86" r="12" fill="#F6CF6E" ${L}/>`,
+  kit: `<path d="M170 104v-14a10 10 0 0 1 10-10h40a10 10 0 0 1 10 10v14" fill="none" ${L}/>
+    <rect x="110" y="104" width="180" height="124" rx="20" fill="#fff" ${L}/>
+    <rect x="110" y="104" width="180" height="30" rx="16" fill="#F2B6A6" ${L}/>
+    <path d="M190 156h20v18h18v20h-18v18h-20v-18h-18v-20h18z" fill="#E36A5C" stroke="${LINE}" stroke-width="4" stroke-linejoin="round"/>`,
+  bottle: `<rect x="150" y="78" width="70" height="30" rx="8" fill="#fff" ${L}/>
+    <path d="M142 108h86v114a14 14 0 0 1-14 14h-58a14 14 0 0 1-14-14z" fill="#D9A27A" ${L}/>
+    <rect x="152" y="140" width="66" height="54" rx="8" fill="#FFF8EE" stroke="${LINE}" stroke-width="3"/>
+    <path d="M180 154h10v10h10v10h-10v10h-10v-10h-10v-10h10z" fill="#5E8C73"/>
+    <ellipse cx="262" cy="214" rx="20" ry="13" fill="#fff" ${L}/><path d="M250 214h24" stroke="${LINE}" stroke-width="3"/>
+    <circle cx="290" cy="186" r="12" fill="#F6CF6E" ${L}/>`,
+  diaper: `<path d="M120 96h160l-12 132a14 14 0 0 1-14 12H146a14 14 0 0 1-14-12z" fill="#C9B6DD" ${L}/>
+    <path d="M128 120h144" stroke="${LINE}" stroke-width="3" fill="none"/>
+    <path d="M200 192c-26-16-30-36-18-44 8-5 16-1 18 6 2-7 10-11 18-6 12 8 8 28-18 44z" fill="#fff" stroke="${LINE}" stroke-width="4"/>
+    <rect x="168" y="82" width="64" height="20" rx="10" fill="#fff" ${L}/>`,
+  pad: `${[0, 1, 2].map((i) => `<rect x="${118 + i * 10}" y="${170 - i * 26}" width="164" height="54" rx="12" fill="${['#DCE9F7', '#C9DEF1', '#fff'][i]}" ${L}/>`).join('')}
+    <path d="M150 140h128M150 154h128" stroke="#9CC6EE" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+    <path d="M296 84c4 10 10 14 20 16-10 2-16 6-20 16-4-10-10-14-20-16 10-2 16-6 20-16z" fill="#9CC6EE"/>`,
+  wipes: `<rect x="100" y="134" width="150" height="92" rx="26" fill="#BFD3C1" ${L}/>
+    <rect x="135" y="150" width="80" height="34" rx="14" fill="#fff" stroke="${LINE}" stroke-width="4"/>
+    <path d="M150 150c10-16 40-16 50 0" fill="#fff" stroke="${LINE}" stroke-width="4"/>
+    <rect x="262" y="96" width="48" height="130" rx="14" fill="#fff" ${L}/><rect x="272" y="80" width="28" height="18" rx="5" fill="#9CC6EE" ${L}/>
+    <circle cx="246" cy="98" r="9" fill="#fff" stroke="#9CC6EE" stroke-width="3"/><circle cx="230" cy="84" r="6" fill="#fff" stroke="#9CC6EE" stroke-width="3"/>`,
+  milk: `<ellipse cx="170" cy="92" rx="56" ry="14" fill="#fff" ${L}/>
+    <path d="M114 92v126c0 8 25 14 56 14s56-6 56-14V92" fill="#F3E3CF" ${L}/>
+    <path d="M114 132c20 8 92 8 112 0v50c-20 8-92 8-112 0z" fill="#fff" stroke="${LINE}" stroke-width="3"/>
+    <path d="M170 168c-14-9-16-20-10-25 4-3 9-1 10 3 1-4 6-6 10-3 6 5 4 16-10 25z" fill="#B5653E"/>
+    <path d="M250 136h56l-8 92h-40z" fill="#fff" ${L}/><path d="M254 160h48l-5 64h-38z" fill="#FFF8EE"/>`,
+  capsule: `<rect x="128" y="96" width="84" height="26" rx="8" fill="#5E8C73" ${L}/>
+    <rect x="120" y="122" width="100" height="108" rx="20" fill="#F6CF6E" ${L}/>
+    <rect x="136" y="148" width="68" height="52" rx="10" fill="#fff" stroke="${LINE}" stroke-width="3"/>
+    <text x="170" y="182" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="20" fill="${LINE}">Ω3</text>
+    ${[[268, 140, -30], [286, 196, 20]].map(([x, y, r]) => `<g transform="rotate(${r} ${x} ${y})"><rect x="${x - 30}" y="${y - 13}" width="60" height="26" rx="13" fill="#F6CF6E" ${L}/><path d="M${x} ${y - 13}v26" stroke="${LINE}" stroke-width="3"/><rect x="${x - 28}" y="${y - 11}" width="28" height="22" rx="11" fill="#E9A84A"/></g>`).join('')}`,
+  monitor: `<rect x="120" y="96" width="140" height="120" rx="22" fill="#fff" ${L}/>
+    <rect x="138" y="114" width="104" height="58" rx="10" fill="#DCE9F7" stroke="${LINE}" stroke-width="3"/>
+    <text x="190" y="152" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="26" fill="#0B3F7F">120/80</text>
+    <circle cx="160" cy="194" r="9" fill="#5E8C73"/><circle cx="190" cy="194" r="9" fill="#F2B6A6"/><circle cx="220" cy="194" r="9" fill="#F6CF6E"/>
+    <path d="M260 150c40 0 30 60 60 60" fill="none" ${L}/><rect x="296" y="196" width="40" height="40" rx="12" fill="#9CC6EE" ${L}/>`,
+  walker: `<path d="M140 96v132M260 96v132M140 112h120M150 170h100" fill="none" ${L}/>
+    <rect x="160" y="152" width="80" height="18" rx="8" fill="#D9A27A" ${L}/>
+    <path d="M128 96h24M248 96h24" stroke="${LINE}" stroke-width="10" stroke-linecap="round"/>
+    ${[140, 260].map((x) => `<circle cx="${x}" cy="232" r="14" fill="#fff" ${L}/><circle cx="${x}" cy="232" r="4" fill="${LINE}"/>`).join('')}
+    <path d="M300 120c-4-12 10-20 16-10 6-10 20-2 16 10-4 12-16 18-16 18s-12-6-16-18z" fill="#B5653E"/>`,
+  shield: `<path d="M200 70c26 18 52 24 76 24v58c0 46-36 70-76 84-40-14-76-38-76-84V94c24 0 50-6 76-24z" fill="#14284F" ${L}/>
+    <path d="M200 92c18 12 36 16 52 17v43c0 34-25 52-52 62-27-10-52-28-52-62v-43c16-1 34-5 52-17z" fill="#DCE9F7"/>
+    <path d="M200 184c-24-15-28-34-17-42 7-5 15-1 17 6 2-7 10-11 17-6 11 8 7 27-17 42z" fill="#B5653E"/>
+    <path d="M284 92l10 10 20-22" fill="none" stroke="#5E8C73" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`,
+  umbrella: `<path d="M110 150c0-50 40-80 90-80s90 30 90 80c-15-10-30-10-45 0-15-10-30-10-45 0-15-10-30-10-45 0-15-10-30-10-45 0z" fill="#E8A68C" ${L}/>
+    <path d="M200 70v-8M200 150v66a14 14 0 0 1-28 0" fill="none" ${L}/>
+    <path d="M154 118c0-20 10-34 18-40M246 118c0-20-10-34-18-40" fill="none" stroke="${LINE}" stroke-width="3"/>
+    <path d="M256 226c-18-11-21-26-13-32 5-4 11-1 13 4 2-5 8-8 13-4 8 6 5 21-13 32z" fill="#B5653E"/>`
+};
+
+export function productArt(kind, line) {
+  const [a, b] = BG[line] || BG.med;
+  const id = `pa-${kind}`;
+  return `<svg class="prod-art" viewBox="0 0 400 300" aria-hidden="true">
+  <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
+  <rect width="400" height="300" fill="url(#${id})"/>
+  <circle cx="330" cy="50" r="80" fill="#fff" opacity=".4"/><circle cx="60" cy="270" r="90" fill="#fff" opacity=".3"/>
+  <ellipse cx="200" cy="246" rx="120" ry="14" fill="${LINE}" opacity=".08"/>
+  <g class="prod-art-in">${ART[kind] || ''}</g>
+</svg>`;
+}

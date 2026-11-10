@@ -23,7 +23,7 @@ import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment
 // ---------- poses ----------
 // Page order. ry grows by the same step each section, so the spin direction
 // stays constant and the heart is facing front again at "contact" (3 turns).
-const ORDER = ['hero', 'why', 'services', 'roles', 'pricing', 'process', 'team', 'stories', 'blog', 'join', 'faq', 'contact'];
+const ORDER = ['hero', 'why', 'services', 'roles', 'pricing', 'shop', 'process', 'team', 'stories', 'blog', 'join', 'faq', 'contact'];
 const RY0 = -0.35;
 const STEP = (Math.PI * 6) / (ORDER.length - 1);
 const BASE = {
@@ -32,6 +32,7 @@ const BASE = {
   services: { x: 0.7, y: -0.04, rx: 0.2, rz: -0.08, s: 1.55, spread: 1.1, lift: 0.6, glow: 0.4, o: 0.22 },
   roles: { x: 0.62, y: 0.08, rx: -0.12, rz: 0.04, s: 1.3, spread: 0.6, lift: 0.3, glow: 0.5, o: 0.2 },
   pricing: { x: 0.72, y: 0.0, rx: 0.25, rz: 0.1, s: 1.6, spread: 1.3, lift: 0.7, glow: 0.35, o: 0.16 },
+  shop: { x: 0.68, y: 0.06, rx: -0.12, rz: 0.06, s: 1.4, spread: 0.9, lift: 0.5, glow: 0.45, o: 0.18 },
   process: { x: 0.62, y: 0.12, rx: 0, rz: 0, s: 1.2, spread: 0.4, lift: 0.2, glow: 0.7, o: 0.32 },
   team: { x: 0.7, y: -0.06, rx: -0.15, rz: -0.06, s: 1.45, spread: 1.0, lift: 0.5, glow: 0.4, o: 0.2 },
   stories: { x: 0.64, y: 0.04, rx: 0.2, rz: 0.08, s: 1.35, spread: 0.8, lift: 0.4, glow: 0.5, o: 0.22 },

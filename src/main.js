@@ -2,9 +2,9 @@ import './styles.css';
 import Lenis from 'lenis';
 import {
   CONTACT, UI, HERO, WHY, SERVICES, ROLES, PRICING, PROCESS, TEAM, STORIES, BLOG, JOIN, FAQ,
-  CONTACT_SECTION as CS, FOOTER, META
+  CONTACT_SECTION as CS, FOOTER, META, SHOP
 } from './content.js';
-import { icon, avatar, coverArt } from './icons.js';
+import { icon, avatar, coverArt, productArt } from './icons.js';
 
 // ---------- Language ----------
 const LANGS = ['vi', 'en'];
@@ -186,6 +186,60 @@ function pricing() {
         </div>
       </div>`).join('')}
       <p class="fine" data-reveal>${icon('clipboard')}${t(UI.vatNote)}</p>
+    </div>
+  </section>`;
+}
+
+// Shop: modelled on the PSI site's product portfolio (filter pills + numbered cards)
+let shopFilter = 'all';
+function shopCards() {
+  const list = shopFilter === 'all' ? SHOP.products : SHOP.products.filter((p) => p.line === shopFilter);
+  return list.map((p, i) => {
+    const idx = SHOP.products.indexOf(p) + 1;
+    const line = SHOP.lines[p.line];
+    const isIns = p.line === 'insurance';
+    const specs = p.specs.map((x) => `<div><dt>${x.v}${t(x.u) ? `<small>${t(x.u)}</small>` : ''}</dt><dd>${t(x.l)}</dd></div>`).join('');
+    return `
+    <article class="prod" data-reveal style="--d:${(i % 3) * 80}ms">
+      <div class="prod-media">
+        ${productArt(p.art, p.line)}
+        <span class="prod-tag">${String(idx).padStart(2, '0')} · ${t(line)}</span>
+        ${p.badge ? `<span class="prod-badge">${t(p.badge)}</span>` : ''}
+      </div>
+      <div class="prod-body">
+        <h3>${t(p.name)}</h3>
+        <p class="tagline">${t(p.tagline)}</p>
+        <dl class="specs">${specs}</dl>
+        <div class="prod-foot">
+          <div class="price"><span>${t(SHOP.price)}</span><strong>${p.price ? money(p.price) : t(SHOP.quote)}${p.priceUnit ? `<small>${t(p.priceUnit)}</small>` : ''}</strong></div>
+          <button type="button" class="btn btn-sm ${isIns ? 'btn-ghost' : 'btn-primary'}" data-order="${t(p.name)}">${icon(isIns ? 'shield' : 'chat')}${isIns || !p.price ? t(SHOP.advise) : t(SHOP.order)}</button>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function shopFilters() {
+  const keys = ['all', ...Object.keys(SHOP.lines)];
+  return keys.map((k) => {
+    const n = k === 'all' ? SHOP.products.length : SHOP.products.filter((p) => p.line === k).length;
+    const label = k === 'all' ? t(SHOP.all) : t(SHOP.lines[k]);
+    return `<button type="button" class="pill" data-f="${k}" aria-pressed="${shopFilter === k}">${k === 'all' ? '' : icon(SHOP.lines[k].icon)}${label}<span class="count">${n}</span></button>`;
+  }).join('');
+}
+
+function shop() {
+  return `
+  <section class="sec shop" id="shop" data-pose="shop">
+    <div class="wrap">
+      <div class="shop-head">
+        ${head(SHOP)}
+        <div class="filters" role="group" aria-label="${t(SHOP.eyebrow)}" data-reveal>${shopFilters()}</div>
+      </div>
+      <ul class="perks" data-reveal>${SHOP.perks.map((x) => `<li>${icon(x.icon)}${t(x)}</li>`).join('')}</ul>
+      <div class="prod-grid" id="prod-grid">${shopCards()}</div>
+      <p class="fine" data-reveal>${icon('shield')}${t(SHOP.note)}</p>
+      <p class="sample-note">${sampleTag()}</p>
     </div>
   </section>`;
 }
@@ -390,7 +444,7 @@ function render() {
   document.documentElement.lang = lang;
   document.title = t(META.title);
   document.querySelector('meta[name="description"]')?.setAttribute('content', t(META.desc));
-  app.innerHTML = `${header()}<main id="main">${hero()}${why()}${services()}${roles()}${pricing()}${process()}${team()}${stories()}${blog()}${join()}${faq()}${contact()}</main>${footer()}`;
+  app.innerHTML = `${header()}<main id="main">${hero()}${why()}${services()}${roles()}${pricing()}${shop()}${process()}${team()}${stories()}${blog()}${join()}${faq()}${contact()}</main>${footer()}`;
   bind();
 }
 
@@ -451,6 +505,23 @@ function bind() {
   app.querySelectorAll('[data-plan]').forEach((a) => a.addEventListener('click', () => {
     const note = app.querySelector('#lead-form textarea');
     if (note) note.value = (lang === 'vi' ? 'Tôi quan tâm: ' : 'I am interested in: ') + a.dataset.plan;
+  }));
+
+  // Shop filters + order buttons
+  const grid = app.querySelector('#prod-grid');
+  const bindOrders = () => grid.querySelectorAll('[data-order]').forEach((b) => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(t(SHOP.orderMsg) + b.dataset.order); } catch { /* clipboard blocked */ }
+    toast(t(SHOP.copied));
+    window.open(CONTACT.zalo, '_blank', 'noopener');
+  }));
+  bindOrders();
+  app.querySelectorAll('.filters .pill').forEach((b) => b.addEventListener('click', () => {
+    shopFilter = b.dataset.f;
+    app.querySelectorAll('.filters .pill').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    grid.innerHTML = shopCards();
+    bindOrders();
+    grid.querySelectorAll('[data-reveal]').forEach((el) => requestAnimationFrame(() => el.classList.add('in')));
+    lenis?.resize?.();
   }));
 
   // Lightbox

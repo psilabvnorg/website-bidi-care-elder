@@ -17,6 +17,7 @@ export const UI = {
   nav: [
     { href: '#services', vi: 'Dịch vụ', en: 'Services' },
     { href: '#pricing', vi: 'Bảng giá', en: 'Pricing' },
+    { href: '#shop', vi: 'Cửa hàng', en: 'Shop' },
     { href: '#team', vi: 'Đội ngũ', en: 'Our team' },
     { href: '#stories', vi: 'Cảm nhận', en: 'Stories' },
     { href: '#contact', vi: 'Liên hệ', en: 'Contact' }
@@ -192,8 +193,88 @@ export const PRICING = {
   ]
 };
 
-export const PROCESS = {
+// SAMPLE: placeholder shop. Product names, prices and specs are examples only;
+// replace them with the real catalogue (and real product photos) before launch.
+// Layout follows the PSI site's product portfolio: filter pills + numbered cards.
+export const SHOP = {
   num: '05',
+  eyebrow: { vi: 'Cửa hàng', en: 'Shop' },
+  title: { vi: 'Đồ dùng cho ông bà, <em>giao tận nhà</em>', en: 'Everyday essentials, <em>delivered home</em>' },
+  lead: { vi: 'Những sản phẩm gia đình hay cần khi chăm sóc người cao tuổi, được đội ngũ BiDi chọn lọc. Có thể nhờ người chăm sóc mang đến trong ca tiếp theo.', en: 'Things families often need when caring for an older person, picked by the BiDi team. Your carer can bring them on the next visit.' },
+  all: { vi: 'Tất cả', en: 'All' },
+  price: { vi: 'Giá tham khảo', en: 'Guide price' },
+  quote: { vi: 'Liên hệ', en: 'Ask us' },
+  order: { vi: 'Đặt qua Zalo', en: 'Order on Zalo' },
+  advise: { vi: 'Nhận tư vấn', en: 'Get advice' },
+  copied: { vi: 'Đã sao chép tên sản phẩm. Hãy dán vào Zalo để đặt nhé!', en: 'Product name copied. Paste it into Zalo to order!' },
+  orderMsg: { vi: 'Xin chào BiDi, tôi muốn đặt: ', en: 'Hello BiDi, I would like to order: ' },
+  perks: [
+    { icon: 'home', vi: 'Giao tận nhà trong nội thành Hà Nội', en: 'Home delivery in central Hanoi' },
+    { icon: 'stethoscope', vi: 'Điều dưỡng hướng dẫn cách dùng', en: 'A nurse shows you how to use it' },
+    { icon: 'heart', vi: 'Mang đến cùng ca chăm sóc', en: 'Brought along on a care visit' }
+  ],
+  note: { vi: 'Thuốc kê đơn chỉ được bán khi có đơn của bác sĩ. Thông tin sản phẩm mang tính tham khảo, không thay thế tư vấn y khoa. Bảo hiểm do công ty bảo hiểm đối tác cung cấp; BiDi chỉ giới thiệu và hỗ trợ thủ tục.', en: 'Prescription medicines are sold only with a doctor’s prescription. Product information is for reference and does not replace medical advice. Insurance is provided by partner insurers; BiDi introduces plans and helps with paperwork.' },
+  lines: {
+    med: { icon: 'pill', vi: 'Thuốc & vật tư y tế', en: 'Medicine & supplies' },
+    hygiene: { icon: 'droplet', vi: 'Bỉm & vệ sinh', en: 'Diapers & hygiene' },
+    nutrition: { icon: 'sparkle', vi: 'Dinh dưỡng & bổ sung', en: 'Nutrition & supplements' },
+    aids: { icon: 'walk', vi: 'Thiết bị hỗ trợ', en: 'Mobility & devices' },
+    insurance: { icon: 'shield', vi: 'Bảo hiểm', en: 'Insurance' }
+  },
+  products: [
+    { line: 'med', art: 'pillbox', badge: { vi: 'Bán chạy', en: 'Popular' },
+      name: { vi: 'Hộp chia thuốc 7 ngày · 4 buổi', en: '7-day pill organiser · 4 times a day' },
+      tagline: { vi: 'Chia sẵn thuốc sáng, trưa, chiều, tối. Nắp to, chữ lớn, dễ mở.', en: 'Morning to night compartments. Big lids and labels, easy to open.' },
+      price: 145000, specs: [{ v: '28', u: { vi: 'ngăn', en: 'slots' }, l: { vi: 'Số ngăn', en: 'Compartments' } }, { v: '7', u: { vi: 'ngày', en: 'days' }, l: { vi: 'Một tuần', en: 'One week' } }, { v: 'BPA', u: { vi: 'không', en: 'free' }, l: { vi: 'Nhựa an toàn', en: 'Safe plastic' } }] },
+    { line: 'med', art: 'kit',
+      name: { vi: 'Bộ thay băng vết thương tại nhà', en: 'Home wound-dressing kit' },
+      tagline: { vi: 'Gạc vô trùng, băng dính y tế, dung dịch sát khuẩn cho 10 lần thay.', en: 'Sterile gauze, medical tape and antiseptic for 10 changes.' },
+      price: 260000, specs: [{ v: '10', u: { vi: 'lần', en: 'uses' }, l: { vi: 'Số lần thay', en: 'Dressing changes' } }, { v: '6', u: { vi: 'món', en: 'items' }, l: { vi: 'Trong bộ', en: 'In the kit' } }, { v: '100', u: '%', l: { vi: 'Vô trùng', en: 'Sterile' } }] },
+    { line: 'med', art: 'bottle',
+      name: { vi: 'Thuốc không kê đơn theo tư vấn', en: 'Over-the-counter medicines' },
+      tagline: { vi: 'Hạ sốt, giảm đau, men tiêu hoá… dược sĩ đối tác tư vấn trước khi giao.', en: 'Fever, pain, digestion… a partner pharmacist advises before delivery.' },
+      price: null, specs: [{ v: '24', u: 'h', l: { vi: 'Giao trong', en: 'Delivered within' } }, { v: '1:1', u: '', l: { vi: 'Dược sĩ tư vấn', en: 'Pharmacist advice' } }, { v: 'Rx', u: '', l: { vi: 'Cần đơn nếu kê đơn', en: 'Prescription if needed' } }] },
+    { line: 'hygiene', art: 'diaper', badge: { vi: 'Tiết kiệm', en: 'Value' },
+      name: { vi: 'Bỉm người lớn dạng quần · size M/L', en: 'Adult pull-up diapers · size M/L' },
+      tagline: { vi: 'Mềm, thấm hút lâu, chống tràn hai bên. Mặc như quần lót, dễ tự thay.', en: 'Soft, long-lasting, leak guards. Worn like underwear, easy to change.' },
+      price: 189000, specs: [{ v: '10', u: { vi: 'miếng', en: 'pcs' }, l: { vi: 'Mỗi gói', en: 'Per pack' } }, { v: '8', u: 'h', l: { vi: 'Thấm hút', en: 'Absorbency' } }, { v: 'M/L', u: '', l: { vi: 'Kích cỡ', en: 'Sizes' } }] },
+    { line: 'hygiene', art: 'pad',
+      name: { vi: 'Tấm lót giường chống thấm', en: 'Waterproof bed underpads' },
+      tagline: { vi: 'Bảo vệ đệm cho người nằm lâu, mặt vải mềm không gây hầm bí.', en: 'Protects the mattress for bed-bound care, with a soft breathable top.' },
+      price: 155000, specs: [{ v: '60×90', u: 'cm', l: { vi: 'Kích thước', en: 'Size' } }, { v: '15', u: { vi: 'tấm', en: 'pcs' }, l: { vi: 'Mỗi gói', en: 'Per pack' } }, { v: '5', u: { vi: 'lớp', en: 'layers' }, l: { vi: 'Chống thấm', en: 'Leak-proof' } }] },
+    { line: 'hygiene', art: 'wipes',
+      name: { vi: 'Khăn ướt & bọt tắm khô', en: 'Wet wipes & no-rinse foam' },
+      tagline: { vi: 'Vệ sinh nhanh cho người nằm tại giường, không cần xả nước.', en: 'Quick hygiene for bed-bound care, no rinsing needed.' },
+      price: 210000, specs: [{ v: '80', u: { vi: 'tờ', en: 'wipes' }, l: { vi: 'Khăn ướt', en: 'Wet wipes' } }, { v: '400', u: 'ml', l: { vi: 'Bọt tắm khô', en: 'No-rinse foam' } }, { v: 'pH', u: '5.5', l: { vi: 'Dịu nhẹ', en: 'Gentle' } }] },
+    { line: 'nutrition', art: 'milk', badge: { vi: 'Gợi ý', en: 'Pick' },
+      name: { vi: 'Sữa dinh dưỡng cho người cao tuổi', en: 'Nutrition milk for older adults' },
+      tagline: { vi: 'Bổ sung đạm, canxi, vitamin D. Ít đường, phù hợp người cần ăn nhạt.', en: 'Protein, calcium and vitamin D. Low sugar for lighter diets.' },
+      price: 520000, specs: [{ v: '850', u: 'g', l: { vi: 'Hộp', en: 'Tin' } }, { v: '20', u: { vi: 'ly', en: 'cups' }, l: { vi: 'Khoảng', en: 'About' } }, { v: '0', u: { vi: 'đường thêm', en: 'added sugar' }, l: { vi: 'Ít ngọt', en: 'Low sugar' } }] },
+    { line: 'nutrition', art: 'capsule',
+      name: { vi: 'Omega-3 & vitamin tổng hợp', en: 'Omega-3 & multivitamin' },
+      tagline: { vi: 'Thực phẩm bổ sung hỗ trợ tim mạch, mắt và trí nhớ. Dùng theo tư vấn.', en: 'A supplement for heart, eyes and memory. Use as advised.' },
+      price: 390000, specs: [{ v: '60', u: { vi: 'viên', en: 'caps' }, l: { vi: 'Mỗi lọ', en: 'Per bottle' } }, { v: '2', u: { vi: 'tháng', en: 'months' }, l: { vi: 'Đủ dùng', en: 'Lasts' } }, { v: '1', u: { vi: 'viên/ngày', en: '/day' }, l: { vi: 'Liều dùng', en: 'Dose' } }] },
+    { line: 'aids', art: 'monitor',
+      name: { vi: 'Máy đo huyết áp bắp tay', en: 'Upper-arm blood pressure monitor' },
+      tagline: { vi: 'Màn hình lớn, đọc kết quả bằng giọng nói, lưu 2 người dùng.', en: 'Big screen, spoken readings, memory for two users.' },
+      price: 890000, specs: [{ v: '2×60', u: '', l: { vi: 'Bộ nhớ', en: 'Memory' } }, { v: '22–42', u: 'cm', l: { vi: 'Vòng bít', en: 'Cuff' } }, { v: '2', u: { vi: 'năm', en: 'yrs' }, l: { vi: 'Bảo hành', en: 'Warranty' } }] },
+    { line: 'aids', art: 'walker',
+      name: { vi: 'Khung tập đi có bánh xe & ghế ngồi', en: 'Rolling walker with seat' },
+      tagline: { vi: 'Gấp gọn, phanh tay, có ghế nghỉ chân khi đi dạo.', en: 'Folds flat, hand brakes and a seat for rests on walks.' },
+      price: 1650000, specs: [{ v: '7', u: 'kg', l: { vi: 'Trọng lượng', en: 'Weight' } }, { v: '120', u: 'kg', l: { vi: 'Tải trọng', en: 'Max load' } }, { v: '4', u: { vi: 'bánh', en: 'wheels' }, l: { vi: 'Bánh xe', en: 'Wheels' } }] },
+    { line: 'insurance', art: 'shield', badge: { vi: 'Mới', en: 'New' },
+      name: { vi: 'Bảo hiểm sức khỏe cho người cao tuổi', en: 'Health insurance for older adults' },
+      tagline: { vi: 'Chi trả nội trú, ngoại trú và chăm sóc sau xuất viện tại nhà.', en: 'Covers inpatient, outpatient and home care after hospital.' },
+      price: 3200000, priceUnit: { vi: '/năm', en: '/year' }, specs: [{ v: '75', u: { vi: 'tuổi', en: 'yrs' }, l: { vi: 'Tham gia đến', en: 'Join up to' } }, { v: '200', u: { vi: 'triệu', en: 'M đ' }, l: { vi: 'Quyền lợi đến', en: 'Cover up to' } }, { v: '24/7', u: '', l: { vi: 'Hỗ trợ bồi thường', en: 'Claims help' } }] },
+    { line: 'insurance', art: 'umbrella',
+      name: { vi: 'Bảo hiểm tai nạn & té ngã', en: 'Accident & fall cover' },
+      tagline: { vi: 'Hỗ trợ chi phí điều trị khi không may té ngã hay gặp tai nạn.', en: 'Helps with treatment costs after a fall or accident.' },
+      price: 650000, priceUnit: { vi: '/năm', en: '/year' }, specs: [{ v: '80', u: { vi: 'tuổi', en: 'yrs' }, l: { vi: 'Tham gia đến', en: 'Join up to' } }, { v: '50', u: { vi: 'triệu', en: 'M đ' }, l: { vi: 'Quyền lợi đến', en: 'Cover up to' } }, { v: '3', u: { vi: 'ngày', en: 'days' }, l: { vi: 'Duyệt hồ sơ', en: 'Claim review' } }] }
+  ]
+};
+
+export const PROCESS = {
+  num: '06',
   eyebrow: { vi: 'Quy trình', en: 'How it works' },
   title: { vi: 'Bốn bước nhẹ nhàng <em>để yên tâm</em>', en: 'Four gentle steps <em>to peace of mind</em>' },
   steps: [
@@ -205,7 +286,7 @@ export const PROCESS = {
 };
 
 export const TEAM = {
-  num: '06',
+  num: '07',
   eyebrow: { vi: 'Đội ngũ', en: 'Our team' },
   title: { vi: 'Những người <em>mang yêu thương đến nhà</em>', en: 'The people who <em>bring care home</em>' },
   founder: {
@@ -236,7 +317,7 @@ export const TEAM = {
 
 // SAMPLE: placeholder testimonials.
 export const STORIES = {
-  num: '07',
+  num: '08',
   eyebrow: { vi: 'Cảm nhận gia đình', en: 'Family stories' },
   title: { vi: 'Những lời cảm ơn <em>làm chúng tôi ấm lòng</em>', en: 'Thank-yous that <em>warm our hearts</em>' },
   items: [
@@ -251,7 +332,7 @@ export const STORIES = {
 
 // SAMPLE: placeholder articles.
 export const BLOG = {
-  num: '08',
+  num: '09',
   eyebrow: { vi: 'Kiến thức sức khỏe', en: 'Health tips' },
   title: { vi: 'Góc chia sẻ <em>cho người chăm sóc</em>', en: 'Notes <em>for family carers</em>' },
   items: [
@@ -281,7 +362,7 @@ export const JOIN = {
 };
 
 export const FAQ = {
-  num: '09',
+  num: '10',
   eyebrow: { vi: 'Câu hỏi thường gặp', en: 'FAQ' },
   title: { vi: 'Gia đình <em>thường hỏi</em>', en: 'Families <em>often ask</em>' },
   items: [
@@ -295,7 +376,7 @@ export const FAQ = {
 };
 
 export const CONTACT_SECTION = {
-  num: '10',
+  num: '11',
   eyebrow: { vi: 'Liên hệ', en: 'Contact' },
   title: { vi: 'Hãy để BiDi <em>chăm sóc cùng bạn</em>', en: 'Let BiDi <em>care alongside you</em>' },
   lead: { vi: 'Để lại vài thông tin, BiDi sẽ gọi lại tư vấn miễn phí. Hoặc nhắn Zalo ngay, chúng tôi luôn sẵn lòng lắng nghe.', en: 'Leave a few details and BiDi will call you back for free advice. Or message us on Zalo, we are always happy to listen.' },

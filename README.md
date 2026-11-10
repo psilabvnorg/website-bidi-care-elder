@@ -32,6 +32,7 @@ Prices come from the BiDi-Homecare catalog (`src/catalog.js` there) and exclude 
 
 Search `SAMPLE` in `src/content.js`:
 
+- the whole shop (`SHOP`): product names, prices, specs and the SVG illustrations in `productArt()`
 - testimonials, nurse team cards, health articles
 - email `lienhe@bidihomecare.vn`, advice hours, the 4.8/5 rating, the "within 24 hours" FAQ answer
 
