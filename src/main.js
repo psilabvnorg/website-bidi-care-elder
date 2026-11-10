@@ -91,7 +91,7 @@ function hero() {
 
 function why() {
   return `
-  <section class="sec why" id="why" data-pose="corner">
+  <section class="sec why" id="why" data-pose="why">
     <div class="wrap why-grid">
       <div class="why-media" data-reveal>
         <div class="blob-photo">
@@ -116,7 +116,7 @@ function why() {
 
 function services() {
   return `
-  <section class="sec services" id="services" data-pose="corner">
+  <section class="sec services" id="services" data-pose="services">
     <div class="wrap">
       ${head(SERVICES, true)}
       <div class="tabs center" role="tablist" data-reveal>
@@ -141,7 +141,7 @@ function services() {
 
 function roles() {
   return `
-  <section class="sec roles" id="roles" data-pose="corner">
+  <section class="sec roles" id="roles" data-pose="roles">
     <div class="wrap">
       ${head(ROLES, true)}
       <div class="role-grid">
@@ -166,7 +166,7 @@ function roles() {
 function pricing() {
   const names = ROLES.items.map((r) => r.name);
   return `
-  <section class="sec pricing" id="pricing" data-pose="corner">
+  <section class="sec pricing" id="pricing" data-pose="pricing">
     <div class="wrap">
       ${head(PRICING, true)}
       <div class="tabs center" role="tablist" data-reveal>
@@ -192,7 +192,7 @@ function pricing() {
 
 function process() {
   return `
-  <section class="sec process" id="process" data-pose="corner">
+  <section class="sec process" id="process" data-pose="process">
     <div class="wrap">
       ${head(PROCESS, true)}
       <ol class="steps">
@@ -210,7 +210,7 @@ function process() {
 function team() {
   const f = TEAM.founder;
   return `
-  <section class="sec team" id="team" data-pose="corner">
+  <section class="sec team" id="team" data-pose="team">
     <div class="wrap">
       ${head(TEAM)}
       <div class="founder" data-reveal>
@@ -260,7 +260,7 @@ function stories() {
   const a = STORIES.items.slice(0, 3);
   const b = STORIES.items.slice(3);
   return `
-  <section class="sec stories" id="stories" data-pose="corner">
+  <section class="sec stories" id="stories" data-pose="stories">
     <div class="wrap">${head(STORIES, true)}</div>
     <div class="marquee" data-reveal>
       <div class="track">${[...a, ...b, ...a, ...b].map(card).join('')}</div>
@@ -274,7 +274,7 @@ function stories() {
 
 function blog() {
   return `
-  <section class="sec blog" id="blog" data-pose="corner">
+  <section class="sec blog" id="blog" data-pose="blog">
     <div class="wrap">
       ${head(BLOG)}
       <div class="blog-grid">
@@ -307,7 +307,7 @@ function join() {
       <button class="join-img" type="button" data-zoom="${img}" aria-label="${t(UI.zoom)}: ${t(p.alt)}"><img src="${img}" alt="${t(p.alt)}" loading="lazy" width="800" height="993"></button>
     </article>`;
   return `
-  <section class="sec join" id="join" data-pose="corner">
+  <section class="sec join" id="join" data-pose="join">
     <div class="wrap join-grid">
       ${panel(JOIN.partner, 'img/partnership.webp', 'navy')}
       ${panel(JOIN.jobs, 'img/recruitment.webp', 'cream')}
@@ -317,7 +317,7 @@ function join() {
 
 function faq() {
   return `
-  <section class="sec faq" id="faq" data-pose="corner">
+  <section class="sec faq" id="faq" data-pose="faq">
     <div class="wrap faq-grid">
       ${head(FAQ)}
       <div class="faq-list">
@@ -334,7 +334,7 @@ function faq() {
 function contact() {
   const f = CS.form;
   return `
-  <section class="sec contact" id="contact" data-pose="corner">
+  <section class="sec contact" id="contact" data-pose="contact">
     <div class="wrap contact-grid">
       <div class="contact-copy">
         ${head(CS)}

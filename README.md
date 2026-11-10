@@ -1,7 +1,10 @@
 # BiDi Homecare: website
 
 A one-page marketing site for BiDi Homecare (home care for older people in Hanoi).
-Warm "hospitality" design with a 3D beating brown heart inside a ring, made with Three.js.
+Warm "hospitality" design. The hero mark is a 3D brown heart inside a ring (Three.js),
+built like the PSI site's logo: an extruded slab with a gradient, which sits big on the
+right and turns as you scroll, with outline echoes that fan out between sections.
+Floating 3D leaves, little hearts and friendly icons drift in the background.
 Vietnamese by default, with an EN switch.
 
 ## Run
@@ -17,7 +20,7 @@ npm run build     # static site in dist/ (works on Vercel, Netlify, GitHub Pages
 | Path | What |
 |---|---|
 | `src/content.js` | All text (VI + EN), prices, contact details. Edit copy here. |
-| `src/heart3d.js` | The 3D heart and ring: materials, heartbeat, scroll poses. |
+| `src/heart3d.js` | The 3D heart and ring, scroll poses (`BASE`), floating leaves/hearts/icons (`ICONS`). |
 | `src/main.js` | Section templates, language switch, tabs, counters, form → Zalo. |
 | `src/icons.js` | Line icons and the illustrated avatars (same style as the logo). |
 | `src/styles.css` | Theme tokens and layout. |
