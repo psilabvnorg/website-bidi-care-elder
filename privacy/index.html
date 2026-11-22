@@ -35,7 +35,10 @@
       h3 { font-size: 18px; margin: 24px 0 4px; }
       p, ul { margin: 10px 0; color: var(--ink-soft); }
       ul { padding-left: 22px; }
+      ol { margin: 10px 0; padding-left: 22px; color: var(--ink-soft); }
       li { margin: 6px 0; }
+      h2[id], h3[id], section[id] { scroll-margin-top: 16px; }
+      h2[id]:target, h3[id]:target { background: #FFF3D6; border-radius: 8px; }
       .meta { color: var(--muted); font-size: 15px; }
       .lang-jump { display: flex; gap: 10px; margin: 16px 0 8px; }
       .lang-jump a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); font-size: 14.5px; font-weight: 600; text-decoration: none; }
@@ -65,11 +68,11 @@
       <section id="vi" lang="vi">
         <h1>Chính sách quyền riêng tư</h1>
         <p class="meta">Áp dụng cho website bidi.care, ứng dụng <b>BiDi Homecare</b> dành cho khách hàng và ứng dụng <b>BiDi Homecare Chuyên viên</b> dành cho điều dưỡng, hộ lý, caregiver. Cập nhật lần cuối: 22/11/2026.</p>
-        <div class="lang-jump"><a href="#vi">Tiếng Việt</a><a href="#en">English</a></div>
+        <div class="lang-jump"><a href="#vi">Tiếng Việt</a><a href="#en">English</a><a href="#vi-xoa-tai-khoan">Xóa tài khoản</a></div>
 
         <p>BiDi Homecare cung cấp dịch vụ chăm sóc người cao tuổi và người bệnh sau xuất viện tại nhà ở Hà Nội. Chúng tôi hiểu rằng thông tin về sức khỏe và gia đình là rất riêng tư. Trang này giải thích chúng tôi thu thập dữ liệu nào, dùng để làm gì, chia sẻ với ai và bạn có những quyền gì.</p>
 
-        <h2>1. Chúng tôi thu thập dữ liệu nào</h2>
+        <h2 id="vi-thu-thap">1. Chúng tôi thu thập dữ liệu nào</h2>
         <div class="tbl">
           <table>
             <thead><tr><th>Dữ liệu</th><th>Ai cung cấp</th><th>Mục đích</th></tr></thead>
@@ -88,7 +91,7 @@
         </div>
         <p>Chúng tôi <b>không</b> thu thập danh bạ, tin nhắn SMS cá nhân, micro hay lịch sử duyệt web của bạn. Chúng tôi không bán dữ liệu cá nhân và không dùng dữ liệu để quảng cáo của bên thứ ba.</p>
 
-        <h2>2. Chúng tôi sử dụng dữ liệu như thế nào</h2>
+        <h2 id="vi-su-dung">2. Chúng tôi sử dụng dữ liệu như thế nào</h2>
         <ul>
           <li>Tạo và bảo vệ tài khoản, xác thực bằng mã OTP.</li>
           <li>Tiếp nhận yêu cầu, ghép chuyên viên phù hợp, điều phối và theo dõi ca chăm sóc.</li>
@@ -98,7 +101,7 @@
           <li>Tuân thủ nghĩa vụ pháp lý.</li>
         </ul>
 
-        <h2>3. Ai nhìn thấy dữ liệu của bạn</h2>
+        <h2 id="vi-chia-se">3. Ai nhìn thấy dữ liệu của bạn</h2>
         <h3>Giữa khách hàng và chuyên viên</h3>
         <p>Khách hàng và chuyên viên chỉ thấy số điện thoại của nhau ở dạng <b>ẩn bớt</b> và ứng dụng không có nút gọi trực tiếp. Mỗi người thấy đầy đủ số điện thoại của chính mình. Chuyên viên chỉ xem thông tin về người được chăm sóc và địa chỉ của ca đã được giao cho họ.</p>
         <h3>Nhân viên BiDi Homecare</h3>
@@ -108,7 +111,7 @@
         <h3>Cơ quan nhà nước</h3>
         <p>Chúng tôi chỉ cung cấp dữ liệu khi pháp luật Việt Nam yêu cầu.</p>
 
-        <h2>4. Lưu trữ và bảo mật</h2>
+        <h2 id="vi-bao-mat">4. Lưu trữ và bảo mật</h2>
         <ul>
           <li>Dữ liệu được truyền qua kết nối mã hóa HTTPS. Mã đăng nhập trên thiết bị được cất trong kho lưu trữ an toàn của hệ điều hành.</li>
           <li>Quyền truy cập theo vai trò, chỉ những người cần thiết mới được xem.</li>
@@ -116,19 +119,29 @@
           <li>Không hệ thống nào an toàn tuyệt đối. Nếu xảy ra sự cố ảnh hưởng đến dữ liệu của bạn, chúng tôi sẽ thông báo theo quy định.</li>
         </ul>
 
-        <h2>5. Quyền của bạn</h2>
+        <h2 id="vi-quyen">5. Quyền của bạn</h2>
         <p>Bạn có quyền biết, xem, sửa, xóa dữ liệu của mình, rút lại sự đồng ý, hạn chế hoặc phản đối việc xử lý, theo Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân. Bạn có thể tắt quyền vị trí, camera, thư viện ảnh và thông báo bất cứ lúc nào trong phần Cài đặt của điện thoại; một số tính năng sẽ không dùng được khi đó.</p>
 
-        <h3>Yêu cầu xóa tài khoản và dữ liệu</h3>
-        <p>Gửi yêu cầu qua email hoặc Zalo ở mục 8 bằng số điện thoại đã đăng ký. Chúng tôi xác minh và xử lý trong vòng 30 ngày. Một số thông tin về ca đã hoàn thành (hóa đơn, báo cáo) có thể được giữ lại trong thời hạn luật yêu cầu.</p>
+        <h3 id="vi-xoa-tai-khoan">Xóa tài khoản và dữ liệu</h3>
+        <p>Áp dụng cho cả ứng dụng <b>BiDi Homecare</b> (khách hàng) và <b>BiDi Homecare Chuyên viên</b>.</p>
+        <p><b>Cách 1: xóa ngay trong ứng dụng.</b></p>
+        <ol>
+          <li>Mở ứng dụng, vào mục <b>Tài khoản</b>.</li>
+          <li>Chọn <b>Xoá tài khoản</b>.</li>
+          <li>Chọn <b>Xoá vĩnh viễn</b> để xác nhận. Tài khoản được xóa ngay và không khôi phục được; bạn sẽ được đăng xuất khỏi thiết bị.</li>
+        </ol>
+        <p><b>Cách 2: nếu không mở được ứng dụng</b> (đã gỡ ứng dụng, mất điện thoại), hãy liên hệ chúng tôi qua email hoặc Zalo ở mục 8 bằng số điện thoại đã đăng ký để được xóa hộ.</p>
+        <p><b>Dữ liệu bị xóa:</b> họ tên, số điện thoại, ảnh đại diện, địa chỉ, hồ sơ người được chăm sóc, thông báo và mã thiết bị nhận thông báo. Với chuyên viên, gồm cả hồ sơ, ảnh chân dung và giấy tờ đã nộp.</p>
+        <p><b>Dữ liệu được giữ lại:</b> đơn dịch vụ, thanh toán và nhật ký kiểm toán được giữ để đối soát kế toán và đáp ứng nghĩa vụ pháp lý, nhưng không còn gắn với tên hay số điện thoại của bạn.</p>
+        <p><b>Khi nào chưa xóa được:</b> nếu bạn còn đơn hoặc ca chăm sóc đang chạy, ứng dụng sẽ báo lý do và bạn cần hoàn tất hoặc hủy ca trước.</p>
 
-        <h2>6. Người cao tuổi và trẻ em</h2>
+<h2 id="vi-tre-em">6. Người cao tuổi và trẻ em</h2>
         <p>Người cao tuổi có thể dùng ứng dụng thông qua người thân đứng tên đặt dịch vụ. Hãy bảo đảm bạn đã được người được chăm sóc đồng ý trước khi nhập thông tin sức khỏe của họ. Ứng dụng không dành cho trẻ em dưới 16 tuổi và chúng tôi không cố ý thu thập dữ liệu của trẻ em.</p>
 
-        <h2>7. Thay đổi chính sách</h2>
+        <h2 id="vi-thay-doi">7. Thay đổi chính sách</h2>
         <p>Khi chính sách thay đổi, chúng tôi cập nhật ngày ở đầu trang và thông báo trong ứng dụng nếu thay đổi quan trọng.</p>
 
-        <h2>8. Liên hệ</h2>
+        <h2 id="vi-lien-he">8. Liên hệ</h2>
         <div class="card">
           <h3>BiDi Homecare, Hà Nội</h3>
           <p>Điện thoại / Zalo: <a href="tel:+84383864255">038 386 4255</a> (<a href="https://zalo.me/0383864255" rel="noopener">nhắn Zalo</a>)<br />
@@ -142,11 +155,11 @@
       <section id="en" lang="en">
         <h1>Privacy Policy</h1>
         <p class="meta">Applies to the bidi.care website, the <b>BiDi Homecare</b> customer app and the <b>BiDi Homecare Caregiver</b> app. Last updated: 22 November 2026.</p>
-        <div class="lang-jump"><a href="#vi">Tiếng Việt</a><a href="#en">English</a></div>
+        <div class="lang-jump"><a href="#vi">Tiếng Việt</a><a href="#en">English</a><a href="#vi-xoa-tai-khoan">Xóa tài khoản</a></div>
 
         <p>BiDi Homecare provides home care for older people and post-hospital patients in Hanoi, Vietnam. Health and family information is deeply personal, so this page explains what we collect, why, who sees it and what rights you have.</p>
 
-        <h2>1. Data we collect</h2>
+        <h2 id="en-data">1. Data we collect</h2>
         <ul>
           <li><b>Account data:</b> name and phone number (login uses a one-time code sent by SMS); optional profile photo.</li>
           <li><b>Care recipient profile (customers):</b> name, age, health condition, care needs and notes; care address.</li>
@@ -158,10 +171,10 @@
         </ul>
         <p>We do <b>not</b> collect your contacts, personal SMS, microphone or browsing history. We do not sell personal data or use it for third-party advertising.</p>
 
-        <h2>2. How we use it</h2>
+        <h2 id="en-use">2. How we use it</h2>
         <p>To create and secure accounts, match and coordinate caregivers, send shift notifications, verify caregivers, ensure quality, handle complaints, prevent fraud and meet legal duties.</p>
 
-        <h2>3. Who sees it</h2>
+        <h2 id="en-sharing">3. Who sees it</h2>
         <ul>
           <li><b>Customers and caregivers</b> see each other's phone number masked, with no call button. Each person sees their own number in full. A caregiver only sees care recipient information and addresses for shifts assigned to them.</li>
           <li><b>BiDi Homecare staff:</b> only administrators can see full phone numbers, and every view is written to an audit log.</li>
@@ -169,17 +182,29 @@
           <li><b>Authorities</b> only when Vietnamese law requires it.</li>
         </ul>
 
-        <h2>4. Storage and security</h2>
+        <h2 id="en-security">4. Storage and security</h2>
         <p>Data travels over HTTPS and login tokens are kept in the device's secure storage. Access is role-based. We keep data while your account is active and for as long as the law, disputes or complaints require, then delete or anonymise it. No system is perfectly secure; if an incident affects your data, we will notify you as required.</p>
 
-        <h2>5. Your rights</h2>
+        <h2 id="en-rights">5. Your rights</h2>
         <p>Under Vietnam's Decree 13/2023/ND-CP you may access, correct or delete your data, withdraw consent and object to or restrict processing. You can turn off location, camera, photo and notification permissions at any time in your phone settings; some features then stop working.</p>
-        <p><b>Account and data deletion:</b> contact us (section 7) from your registered phone number. We verify and process requests within 30 days. Records of completed shifts (invoices, reports) may be kept for the period the law requires.</p>
 
-        <h2>6. Children and older adults</h2>
+        <h3 id="en-delete-account">Delete your account and data</h3>
+        <p>This applies to both the <b>BiDi Homecare</b> customer app and the <b>BiDi Homecare Caregiver</b> app.</p>
+        <p><b>Option 1: delete inside the app.</b></p>
+        <ol>
+          <li>Open the app and go to <b>Account</b> (Tài khoản).</li>
+          <li>Tap <b>Delete account</b> (Xoá tài khoản).</li>
+          <li>Tap <b>Delete permanently</b> (Xoá vĩnh viễn) to confirm. The account is deleted immediately and cannot be restored; you are signed out of the device.</li>
+        </ol>
+        <p><b>Option 2: if you cannot open the app</b> (uninstalled it, lost your phone), contact us by email or Zalo (section 7) from your registered phone number and we will delete it for you.</p>
+        <p><b>What is deleted:</b> your name, phone number, profile photo, addresses, care recipient profiles, notifications and push-notification device tokens. For caregivers this also includes the profile, portrait photo and documents submitted.</p>
+        <p><b>What is kept:</b> orders, payments and audit logs are kept for accounting and legal obligations, but are no longer linked to your name or phone number.</p>
+        <p><b>When deletion is blocked:</b> if you still have an active booking or shift, the app tells you why and you need to finish or cancel it first.</p>
+
+<h2 id="en-children">6. Children and older adults</h2>
         <p>The apps are not directed to children under 16. Older people may use the service through a family member who books on their behalf; please make sure the care recipient agrees before you enter their health information.</p>
 
-        <h2>7. Contact</h2>
+        <h2 id="en-contact">7. Contact</h2>
         <div class="card">
           <h3>BiDi Homecare, Hanoi</h3>
           <p>Phone / Zalo: <a href="tel:+84383864255">038 386 4255</a><br />
