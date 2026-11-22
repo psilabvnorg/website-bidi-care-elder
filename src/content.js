@@ -406,7 +406,7 @@ export const FOOTER = {
   copy: { vi: 'BiDi Homecare. Mọi quyền được bảo lưu.', en: 'BiDi Homecare. All rights reserved.' },
   cols: [
     { h: { vi: 'Dịch vụ', en: 'Services' }, links: [['#services', { vi: 'Người cao tuổi', en: 'Elderly care' }], ['#services', { vi: 'Sau xuất viện', en: 'After hospital' }], ['#pricing', { vi: 'Bảng giá', en: 'Pricing' }]] },
-    { h: { vi: 'BiDi', en: 'BiDi' }, links: [['#team', { vi: 'Đội ngũ', en: 'Our team' }], ['#join', { vi: 'Tuyển dụng', en: 'Careers' }], ['#join', { vi: 'Hợp tác', en: 'Partnership' }]] }
+    { h: { vi: 'BiDi', en: 'BiDi' }, links: [['#team', { vi: 'Đội ngũ', en: 'Our team' }], ['#join', { vi: 'Tuyển dụng', en: 'Careers' }], ['#join', { vi: 'Hợp tác', en: 'Partnership' }], ['privacy/', { vi: 'Chính sách quyền riêng tư', en: 'Privacy policy' }]] }
   ]
 };
 
